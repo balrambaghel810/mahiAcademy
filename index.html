@@ -1,0 +1,1681 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mahi Academy - We Create Leaders, We Are A Team</title>
+    <meta
+      name="description"
+      content="Mahi Academy - Premium educational institution creating leaders through collaborative learning and modern teaching methods"
+    />
+    <meta
+      name="keywords"
+      content="school, academy, education, learning, students, teachers, courses"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Custom Styles -->
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      /* Custom Colors */
+      :root {
+        --primary-gold: #d4af37;
+        --secondary-blue: #87ceeb;
+        --accent-red: #e74c3c;
+        --text-dark: #2c3e50;
+        --text-light: #6c757d;
+      }
+
+      /* Animations */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .animate-fadeInUp {
+        animation: fadeInUp 0.6s ease-out;
+      }
+
+      .animate-pulse-slow {
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      /* Glassmorphism */
+      .glass {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .glass-dark {
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Gradient Backgrounds */
+      .gradient-primary {
+        background: linear-gradient(135deg, var(--primary-gold), #f4e5c2);
+      }
+
+      .gradient-secondary {
+        background: linear-gradient(135deg, var(--secondary-blue), #b8e6f3);
+      }
+
+      .gradient-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      /* Hover Effects */
+      .hover-lift {
+        transition: all 0.3s ease;
+      }
+
+      .hover-lift:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary-gold);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .scroll-to-top.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* WhatsApp Floating Button */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        z-index: 1000;
+      }
+
+      /* Lightbox */
+      .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 2000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .lightbox.active {
+        display: flex;
+      }
+
+      .lightbox-content {
+        max-width: 90%;
+        max-height: 90%;
+        position: relative;
+      }
+
+      .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        color: white;
+        font-size: 40px;
+        cursor: pointer;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--primary-gold);
+        border-radius: 5px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #b8941f;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Scroll to Top Button -->
+    <button
+      class="scroll-to-top bg-gradient-primary text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+      <a
+        href="https://wa.me/1234567890"
+        target="_blank"
+        class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 animate-pulse-slow"
+      >
+        <i class="fab fa-whatsapp text-2xl"></i>
+      </a>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 glass shadow-md">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo -->
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center"
+            >
+              <i class="fas fa-graduation-cap text-white text-xl"></i>
+            </div>
+            <span class="text-2xl font-bold text-gray-800">Mahi Academy</span>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#home"
+              class="nav-link text-gray-700 hover:text-yellow-600 font-medium"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="nav-link text-gray-700 hover:text-yellow-600 font-medium"
+              >About</a
+            >
+            <a
+              href="#courses"
+              class="nav-link text-gray-700 hover:text-yellow-600 font-medium"
+              >Courses</a
+            >
+            <a
+              href="#admissions"
+              class="nav-link text-gray-700 hover:text-yellow-600 font-medium"
+              >Admissions</a
+            >
+            <a
+              href="#faculty"
+              class="nav-link text-gray-700 hover:text-yellow-600 font-medium"
+              >Faculty</a
+            >
+            <a
+              href="#gallery"
+              class="nav-link text-gray-700 hover:text-yellow-600 font-medium"
+              >Gallery</a
+            >
+            <a
+              href="#blog"
+              class="nav-link text-gray-700 hover:text-yellow-600 font-medium"
+              >Blog</a
+            >
+            <a
+              href="#contact"
+              class="nav-link text-gray-700 hover:text-yellow-600 font-medium"
+              >Contact</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button class="md:hidden text-gray-700" id="mobile-menu-btn">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden pb-4" id="mobile-menu">
+          <div class="flex flex-col space-y-3">
+            <a
+              href="#home"
+              class="text-gray-700 hover:text-yellow-600 font-medium py-2"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="text-gray-700 hover:text-yellow-600 font-medium py-2"
+              >About</a
+            >
+            <a
+              href="#courses"
+              class="text-gray-700 hover:text-yellow-600 font-medium py-2"
+              >Courses</a
+            >
+            <a
+              href="#admissions"
+              class="text-gray-700 hover:text-yellow-600 font-medium py-2"
+              >Admissions</a
+            >
+            <a
+              href="#faculty"
+              class="text-gray-700 hover:text-yellow-600 font-medium py-2"
+              >Faculty</a
+            >
+            <a
+              href="#gallery"
+              class="text-gray-700 hover:text-yellow-600 font-medium py-2"
+              >Gallery</a
+            >
+            <a
+              href="#blog"
+              class="text-gray-700 hover:text-yellow-600 font-medium py-2"
+              >Blog</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-700 hover:text-yellow-600 font-medium py-2"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="gradient-hero text-white py-20 lg:py-32 relative overflow-hidden"
+    >
+      <!-- Floating Shapes -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div
+          class="absolute top-20 left-10 w-20 h-20 bg-white opacity-10 rounded-full animate-float"
+        ></div>
+        <div
+          class="absolute top-40 right-20 w-32 h-32 bg-yellow-300 opacity-10 rounded-full animate-float"
+          style="animation-delay: 1s"
+        ></div>
+        <div
+          class="absolute bottom-20 left-1/4 w-16 h-16 bg-blue-300 opacity-10 rounded-full animate-float"
+          style="animation-delay: 2s"
+        ></div>
+        <div
+          class="absolute bottom-40 right-1/3 w-24 h-24 bg-white opacity-10 rounded-full animate-float"
+          style="animation-delay: 0.5s"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center justify-between">
+          <div class="lg:w-1/2 mb-10 lg:mb-0 animate-fadeInUp">
+            <!-- Logo in Hero -->
+            <div class="flex items-center space-x-3 mb-6">
+              <div
+                class="w-16 h-16 bg-white rounded-full flex items-center justify-center"
+              >
+                <i class="fas fa-graduation-cap text-yellow-500 text-2xl"></i>
+              </div>
+              <span class="text-3xl font-bold">Mahi Academy</span>
+            </div>
+
+            <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+              Mahi Academy – We Create Leaders, We Are A Team
+            </h1>
+
+            <p class="text-xl mb-8 text-gray-100 leading-relaxed">
+              Empowering students with quality education, innovative teaching
+              methods, and a collaborative learning environment. Join us to
+              shape a brighter future.
+            </p>
+
+            <div
+              class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
+            >
+              <button
+                class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl"
+              >
+                <i class="fas fa-user-plus mr-2"></i> Apply for Admission
+              </button>
+              <button
+                class="bg-transparent border-2 border-white hover:bg-white hover:text-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
+              >
+                <i class="fas fa-book-open mr-2"></i> Explore Courses
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:w-1/2 flex justify-center">
+            <div class="relative">
+              <img
+                src="https://picsum.photos/seed/indian-school-building/600/400"
+                alt="School Building"
+                class="rounded-2xl shadow-2xl animate-float"
+              />
+              <div
+                class="absolute -bottom-6 -left-6 bg-white text-gray-800 p-4 rounded-xl shadow-xl"
+              >
+                <div class="flex items-center space-x-3">
+                  <div
+                    class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center"
+                  >
+                    <i class="fas fa-trophy text-white"></i>
+                  </div>
+                  <div>
+                    <p class="font-bold text-lg">95% Success Rate</p>
+                    <p class="text-sm text-gray-600">Academic Excellence</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">
+            About Mahi Academy
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Learn more about our mission, vision, and what makes us a premier
+            educational institution
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="relative">
+            <img src="https://picsum.photos/seed/indian-students-classroom/500/600" alt="Classroom" class="rounded-2xl shadow-xl">
+            <div
+              class="absolute top-10 -right-10 w-32 h-32 bg-yellow-400 rounded-full opacity-20 animate-float"
+            ></div>
+            <div
+              class="absolute bottom-10 -left-10 w-24 h-24 bg-blue-400 rounded-full opacity-20 animate-float"
+              style="animation-delay: 1s"
+            ></div>
+          </div>
+
+          <div>
+            <h3 class="text-3xl font-bold text-gray-800 mb-6">
+              Creating Tomorrow's Leaders Today
+            </h3>
+
+            <div class="space-y-6 mb-8">
+              <div>
+                <h4 class="text-xl font-semibold text-yellow-600 mb-2">
+                  Our Mission
+                </h4>
+                <p class="text-gray-600 leading-relaxed">
+                  To provide quality education that nurtures creativity,
+                  critical thinking, and character development, preparing
+                  students to become responsible global citizens.
+                </p>
+              </div>
+
+              <div>
+                <h4 class="text-xl font-semibold text-yellow-600 mb-2">
+                  Our Vision
+                </h4>
+                <p class="text-gray-600 leading-relaxed">
+                  To be a leading educational institution recognized for
+                  academic excellence, innovative teaching methods, and holistic
+                  student development.
+                </p>
+              </div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="text-center">
+                <div
+                  class="text-3xl font-bold text-yellow-600 counter"
+                  data-target="500"
+                >
+                  0
+                </div>
+                <p class="text-gray-600 font-medium">+ Students</p>
+              </div>
+              <div class="text-center">
+                <div
+                  class="text-3xl font-bold text-yellow-600 counter"
+                  data-target="20"
+                >
+                  0
+                </div>
+                <p class="text-gray-600 font-medium">+ Teachers</p>
+              </div>
+              <div class="text-center">
+                <div
+                  class="text-3xl font-bold text-yellow-600 counter"
+                  data-target="10"
+                >
+                  0
+                </div>
+                <p class="text-gray-600 font-medium">+ Years Experience</p>
+              </div>
+              <div class="text-center">
+                <div
+                  class="text-3xl font-bold text-yellow-600 counter"
+                  data-target="95"
+                >
+                  0
+                </div>
+                <p class="text-gray-600 font-medium">% Results</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">
+            Our Courses & Programs
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive educational programs designed for every learning stage
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Course 1 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg hover-lift p-8 text-center"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-child text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+              Primary Education
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Building strong foundations with interactive learning and creative
+              exploration for young minds.
+            </p>
+            <button
+              class="text-yellow-600 font-semibold hover:text-yellow-700 transition-colors"
+            >
+              Learn More <i class="fas fa-arrow-right ml-1"></i>
+            </button>
+          </div>
+
+          <!-- Course 2 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg hover-lift p-8 text-center"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-secondary rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-book text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">Middle School</h3>
+            <p class="text-gray-600 mb-6">
+              Bridging concepts with advanced learning, critical thinking, and
+              skill development.
+            </p>
+            <button
+              class="text-yellow-600 font-semibold hover:text-yellow-700 transition-colors"
+            >
+              Learn More <i class="fas fa-arrow-right ml-1"></i>
+            </button>
+          </div>
+
+          <!-- Course 3 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg hover-lift p-8 text-center"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-graduation-cap text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+              Secondary Education
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Preparing students for higher education with comprehensive
+              curriculum and exam preparation.
+            </p>
+            <button
+              class="text-yellow-600 font-semibold hover:text-yellow-700 transition-colors"
+            >
+              Learn More <i class="fas fa-arrow-right ml-1"></i>
+            </button>
+          </div>
+
+          <!-- Course 4 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg hover-lift p-8 text-center"
+          >
+            <div
+              class="w-20 h-20 bg-gradient-secondary rounded-full flex items-center justify-center mx-auto mb-6"
+            >
+              <i class="fas fa-trophy text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">
+              Competitive Exams
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Specialized coaching for various competitive exams with expert
+              guidance and practice.
+            </p>
+            <button
+              class="text-yellow-600 font-semibold hover:text-yellow-700 transition-colors"
+            >
+              Learn More <i class="fas fa-arrow-right ml-1"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">
+            Why Choose Mahi Academy
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Discover what makes us the preferred choice for quality education
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="text-center group">
+            <div
+              class="w-24 h-24 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-chalkboard-teacher text-white text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">
+              Experienced Teachers
+            </h3>
+            <p class="text-gray-600">
+              Highly qualified and dedicated faculty committed to student
+              success
+            </p>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="w-24 h-24 bg-gradient-secondary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-laptop text-white text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">
+              Smart Classrooms
+            </h3>
+            <p class="text-gray-600">
+              Modern technology-enabled learning environments
+            </p>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="w-24 h-24 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-brain text-white text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">
+              Modern Learning
+            </h3>
+            <p class="text-gray-600">
+              Innovative teaching methods for better understanding
+            </p>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="w-24 h-24 bg-gradient-secondary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-running text-white text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">
+              Student Activities
+            </h3>
+            <p class="text-gray-600">
+              Extracurricular activities for holistic development
+            </p>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="w-24 h-24 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-chart-line text-white text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">
+              Excellent Results
+            </h3>
+            <p class="text-gray-600">
+              Consistently outstanding academic performance
+            </p>
+          </div>
+
+          <div class="text-center group">
+            <div
+              class="w-24 h-24 bg-gradient-secondary rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <i class="fas fa-shield-alt text-white text-3xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">
+              Safe Environment
+            </h3>
+            <p class="text-gray-600">
+              Secure and nurturing atmosphere for learning
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section id="faculty" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">
+            Meet Our Faculty
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Learn from the best minds in education
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Teacher 1 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift group"
+          >
+            <div class="relative overflow-hidden h-64">
+              <img
+                src="https://picsum.photos/seed/indian-female-teacher/300/300"
+                alt="Teacher"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-1">
+                Dr. Sarah Johnson
+              </h3>
+              <p class="text-yellow-600 font-medium mb-2">Mathematics</p>
+              <p class="text-gray-600 text-sm mb-4">15+ years experience</p>
+              <div class="flex space-x-3">
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-600 transition-colors"
+                >
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-600 transition-colors"
+                >
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Teacher 2 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift group"
+          >
+            <div class="relative overflow-hidden h-64">
+              <img
+                src="https://picsum.photos/seed/indian-male-teacher-science/300/300"
+                alt="Teacher"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-1">
+                Prof. Michael Chen
+              </h3>
+              <p class="text-yellow-600 font-medium mb-2">Science</p>
+              <p class="text-gray-600 text-sm mb-4">12+ years experience</p>
+              <div class="flex space-x-3">
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-600 transition-colors"
+                >
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-600 transition-colors"
+                >
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Teacher 3 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift group"
+          >
+            <div class="relative overflow-hidden h-64">
+              <img
+                src="https://picsum.photos/seed/indian-english-teacher/300/300"
+                alt="Teacher"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-1">
+                Ms. Emily Davis
+              </h3>
+              <p class="text-yellow-600 font-medium mb-2">English</p>
+              <p class="text-gray-600 text-sm mb-4">10+ years experience</p>
+              <div class="flex space-x-3">
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-600 transition-colors"
+                >
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-600 transition-colors"
+                >
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Teacher 4 -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift group"
+          >
+            <div class="relative overflow-hidden h-64">
+              <img
+                src="https://picsum.photos/seed/indian-computer-science-teacher/300/300"
+                alt="Teacher"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-800 mb-1">
+                Mr. Robert Wilson
+              </h3>
+              <p class="text-yellow-600 font-medium mb-2">Computer Science</p>
+              <p class="text-gray-600 text-sm mb-4">8+ years experience</p>
+              <div class="flex space-x-3">
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-600 transition-colors"
+                >
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-yellow-600 transition-colors"
+                >
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">School Gallery</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Glimpses of our vibrant school life and activities
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div
+            class="gallery-item overflow-hidden rounded-lg shadow-lg cursor-pointer hover-lift"
+          >
+            <img src="https://picsum.photos/seed/indian-school-classroom/400/300" alt="Gallery" class="w-full h-full object-cover">
+          </div>
+          <div
+            class="gallery-item overflow-hidden rounded-lg shadow-lg cursor-pointer hover-lift"
+          >
+            <img src="https://picsum.photos/seed/indian-students-playing/400/300" alt="Gallery" class="w-full h-full object-cover">
+          </div>
+          <div
+            class="gallery-item overflow-hidden rounded-lg shadow-lg cursor-pointer hover-lift"
+          >
+            <img src="https://picsum.photos/seed/indian-school-laboratory/400/300" alt="Gallery" class="w-full h-full object-cover">
+          </div>
+          <div
+            class="gallery-item overflow-hidden rounded-lg shadow-lg cursor-pointer hover-lift"
+          >
+            <img src="https://picsum.photos/seed/indian-school-sports/400/300" alt="Gallery" class="w-full h-full object-cover">
+          </div>
+          <div
+            class="gallery-item overflow-hidden rounded-lg shadow-lg cursor-pointer hover-lift"
+          >
+            <img src="https://picsum.photos/seed/indian-school-library/400/300" alt="Gallery" class="w-full h-full object-cover">
+          </div>
+          <div
+            class="gallery-item overflow-hidden rounded-lg shadow-lg cursor-pointer hover-lift"
+          >
+            <img src="https://picsum.photos/seed/indian-school-assembly/400/300" alt="Gallery" class="w-full h-full object-cover">
+          </div>
+          <div
+            class="gallery-item overflow-hidden rounded-lg shadow-lg cursor-pointer hover-lift"
+          >
+            <img src="https://picsum.photos/seed/indian-school-art-class/400/300" alt="Gallery" class="w-full h-full object-cover">
+          </div>
+          <div
+            class="gallery-item overflow-hidden rounded-lg shadow-lg cursor-pointer hover-lift"
+          >
+            <img src="https://picsum.photos/seed/indian-school-computer-lab/400/300" alt="Gallery" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <span class="lightbox-close">&times;</span>
+      <img
+        class="lightbox-content"
+        id="lightbox-img"
+        src=""
+        alt="Gallery Image"
+      />
+    </div>
+
+    <!-- Admission Section -->
+    <section id="admissions" class="py-20 gradient-primary">
+      <div class="container mx-auto px-4">
+        <div class="text-center text-white">
+          <h2 class="text-4xl font-bold mb-4">Admissions Open 2026</h2>
+          <p class="text-xl mb-8 max-w-3xl mx-auto">
+            Join our prestigious institution and embark on a journey of academic
+            excellence and personal growth
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center"
+          >
+            <button
+              class="bg-white text-yellow-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl"
+            >
+              <i class="fas fa-paper-plane mr-2"></i> Apply Now
+            </button>
+            <button
+              class="bg-transparent border-2 border-white hover:bg-white hover:text-yellow-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
+            >
+              <i class="fas fa-download mr-2"></i> Download Prospectus
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">
+            What Parents & Students Say
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Real experiences from our community
+          </p>
+        </div>
+
+        <div class="relative max-w-4xl mx-auto">
+          <div class="testimonial-slider">
+            <!-- Testimonial 1 -->
+            <div
+              class="testimonial-slide bg-white rounded-2xl shadow-xl p-8 text-center"
+            >
+              <div class="w-20 h-20 mx-auto mb-6">
+                <img
+                  src="https://picsum.photos/seed/indian-school-students-learning/100/100"
+                  alt="Parent"
+                  class="w-full h-full rounded-full object-cover"
+                />
+              </div>
+              <div class="flex justify-center mb-4">
+                <i class="fas fa-star text-yellow-500"></i>
+                <i class="fas fa-star text-yellow-500"></i>
+                <i class="fas fa-star text-yellow-500"></i>
+                <i class="fas fa-star text-yellow-500"></i>
+                <i class="fas fa-star text-yellow-500"></i>
+              </div>
+              <p class="text-gray-600 mb-6 text-lg italic">
+                "Mahi Academy has transformed my child's learning experience.
+                The teachers are dedicated and the environment is perfect for
+                growth."
+              </p>
+              <h4 class="text-xl font-bold text-gray-800">Mrs. Priya Sharma</h4>
+              <p class="text-yellow-600">Parent</p>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div
+              class="testimonial-slide bg-white rounded-2xl shadow-xl p-8 text-center hidden"
+            >
+              <div class="w-20 h-20 mx-auto mb-6">
+                <img
+                  src="https://picsum.photos/seed/indian-happy-student/100/100"
+                  alt="Student"
+                  class="w-full h-full rounded-full object-cover"
+                />
+              </div>
+              <div class="flex justify-center mb-4">
+                <i class="fas fa-star text-yellow-500"></i>
+                <i class="fas fa-star text-yellow-500"></i>
+                <i class="fas fa-star text-yellow-500"></i>
+                <i class="fas fa-star text-yellow-500"></i>
+                <i class="fas fa-star text-yellow-500"></i>
+              </div>
+              <p class="text-gray-600 mb-6 text-lg italic">
+                "I love studying at Mahi Academy! The teachers make learning fun
+                and I've made so many friends here."
+              </p>
+              <h4 class="text-xl font-bold text-gray-800">Rahul Verma</h4>
+              <p class="text-yellow-600">Student</p>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div
+              class="testimonial-slide bg-white rounded-2xl shadow-xl p-8 text-center hidden"
+            >
+              <div class="w-20 h-20 mx-auto mb-6">
+                <img
+                  src="https://picsum.photos/seed/indian-school-parent/100/100"
+                  alt="Parent"
+                  class="w-full h-full rounded-full object-cover"
+                />
+              </div>
+              <div class="flex justify-center mb-4">
+                <i class="fas fa-star text-yellow-500"></i>
+                <i class="fas fa-star text-yellow-500"></i>
+                <i class="fas fa-star text-yellow-500"></i>
+                <i class="fas fa-star text-yellow-500"></i>
+                <i class="fas fa-star text-yellow-500"></i>
+              </div>
+              <p class="text-gray-600 mb-6 text-lg italic">
+                "The academic standards and extracurricular activities at Mahi
+                Academy are exceptional. My children are thriving here."
+              </p>
+              <h4 class="text-xl font-bold text-gray-800">Mr. James Wilson</h4>
+              <p class="text-yellow-600">Parent</p>
+            </div>
+          </div>
+
+          <!-- Slider Controls -->
+          <button
+            class="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors"
+            id="prev-testimonial"
+          >
+            <i class="fas fa-chevron-left text-gray-600"></i>
+          </button>
+          <button
+            class="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-100 transition-colors"
+            id="next-testimonial"
+          >
+            <i class="fas fa-chevron-right text-gray-600"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">
+            Latest Blog Posts
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Stay updated with educational insights and school news
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Blog 1 -->
+          <article
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift group"
+          >
+            <div class="overflow-hidden h-48">
+              <img src="https://picsum.photos/seed/indian-stem-education/400/250" alt="Blog" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+            </div>
+            <div class="p-6">
+              <div class="text-sm text-yellow-600 font-medium mb-2">
+                March 15, 2026
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-3">
+                The Importance of STEM Education
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Discover why Science, Technology, Engineering, and Mathematics
+                are crucial for future success...
+              </p>
+              <a
+                href="#"
+                class="text-yellow-600 font-semibold hover:text-yellow-700 transition-colors"
+              >
+                Read More <i class="fas fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Blog 2 -->
+          <article
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift group"
+          >
+            <div class="overflow-hidden h-48">
+              <img src="https://picsum.photos/seed/indian-students-studying/400/250" alt="Blog" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+            </div>
+            <div class="p-6">
+              <div class="text-sm text-yellow-600 font-medium mb-2">
+                March 10, 2026
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-3">
+                Effective Study Techniques for Students
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Learn proven strategies to improve concentration, memory
+                retention, and academic performance...
+              </p>
+              <a
+                href="#"
+                class="text-yellow-600 font-semibold hover:text-yellow-700 transition-colors"
+              >
+                Read More <i class="fas fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Blog 3 -->
+          <article
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift group"
+          >
+            <div class="overflow-hidden h-48">
+              <img src="https://picsum.photos/seed/indian-confident-students/400/250" alt="Blog" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+            </div>
+            <div class="p-6">
+              <div class="text-sm text-yellow-600 font-medium mb-2">
+                March 5, 2026
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 mb-3">
+                Building Confidence in Young Learners
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Explore methods to help children develop self-esteem and a
+                positive mindset towards learning...
+              </p>
+              <a
+                href="#"
+                class="text-yellow-600 font-semibold hover:text-yellow-700 transition-colors"
+              >
+                Read More <i class="fas fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-gray-800 mb-4">Get in Touch</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            We'd love to hear from you. Contact us for any inquiries
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Contact Info -->
+          <div>
+            <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+              <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                Contact Information
+              </h3>
+
+              <div class="space-y-4">
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fas fa-map-marker-alt text-white"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-800 mb-1">Address</h4>
+                    <p class="text-gray-600">
+                      123 Education Street, Knowledge City, State 12345
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fas fa-phone text-white"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-800 mb-1">Phone</h4>
+                    <p class="text-gray-600">+1 (234) 567-8900</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0"
+                  >
+                    <i class="fas fa-envelope text-white"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-800 mb-1">Email</h4>
+                    <p class="text-gray-600">info@mahiacademy.edu</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Media -->
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+              <h3 class="text-2xl font-bold text-gray-800 mb-6">Follow Us</h3>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-12 h-12 bg-blue-400 text-white rounded-full flex items-center justify-center hover:bg-blue-500 transition-colors"
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-12 h-12 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-12 h-12 bg-blue-700 text-white rounded-full flex items-center justify-center hover:bg-blue-800 transition-colors"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
+                >
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form & Map -->
+          <div class="space-y-8">
+            <!-- Contact Form -->
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+              <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                Send us a Message
+              </h3>
+              <form id="contact-form">
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500 transition-colors"
+                    required
+                  />
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500 transition-colors"
+                    required
+                  />
+                </div>
+                <input
+                  type="tel"
+                  placeholder="Your Phone"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500 transition-colors mb-4"
+                  required
+                />
+                <textarea
+                  placeholder="Your Message"
+                  rows="4"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-yellow-500 transition-colors mb-6"
+                  required
+                ></textarea>
+                <button
+                  type="submit"
+                  class="w-full bg-gradient-primary text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                >
+                  <i class="fas fa-paper-plane mr-2"></i> Send Message
+                </button>
+              </form>
+            </div>
+
+            <!-- Map -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden h-64">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.8977656397843!2d88.36389731498157!3d22.56979558518535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277af0c5f9f3b%3A0x7b5c5f5f5f5f5f5f!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1647890123456"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                class="w-full h-full"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <!-- Logo & Description -->
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <div
+                class="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center"
+              >
+                <i class="fas fa-graduation-cap text-white text-lg"></i>
+              </div>
+              <span class="text-xl font-bold">Mahi Academy</span>
+            </div>
+            <p class="text-gray-400">
+              Creating leaders through quality education and collaborative
+              learning experiences.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-yellow-500 transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#courses"
+                  class="text-gray-400 hover:text-yellow-500 transition-colors"
+                  >Courses</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#admissions"
+                  class="text-gray-400 hover:text-yellow-500 transition-colors"
+                  >Admissions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-400 hover:text-yellow-500 transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><i class="fas fa-phone mr-2"></i> +1 (234) 567-8900</li>
+              <li><i class="fas fa-envelope mr-2"></i> info@mahiacademy.edu</li>
+              <li>
+                <i class="fas fa-map-marker-alt mr-2"></i> 123 Education Street
+              </li>
+            </ul>
+          </div>
+
+          <!-- Social Media -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+            <div class="flex space-x-3">
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-yellow-500 transition-colors"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-yellow-500 transition-colors"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-yellow-500 transition-colors"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-yellow-500 transition-colors"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-800 pt-8 text-center">
+          <p class="text-gray-400">© 2026 Mahi Academy. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Smooth Scrolling for Navigation Links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+            // Close mobile menu if open
+            mobileMenu.classList.add("hidden");
+          }
+        });
+      });
+
+      // Scroll to Top Button
+      const scrollToTopBtn = document.querySelector(".scroll-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          scrollToTopBtn.classList.add("show");
+        } else {
+          scrollToTopBtn.classList.remove("show");
+        }
+      });
+
+      scrollToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Animated Counter
+      const counters = document.querySelectorAll(".counter");
+      const speed = 200;
+
+      const animateCounters = () => {
+        counters.forEach((counter) => {
+          const updateCount = () => {
+            const target = +counter.getAttribute("data-target");
+            const count = +counter.innerText;
+            const inc = target / speed;
+
+            if (count < target) {
+              counter.innerText = Math.ceil(count + inc);
+              setTimeout(updateCount, 1);
+            } else {
+              counter.innerText = target;
+            }
+          };
+          updateCount();
+        });
+      };
+
+      // Intersection Observer for Counter Animation
+      const counterSection = document.querySelector("#about");
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCounters();
+              counterObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+
+      if (counterSection) {
+        counterObserver.observe(counterSection);
+      }
+
+      // Testimonial Slider
+      const testimonialSlides = document.querySelectorAll(".testimonial-slide");
+      const prevBtn = document.getElementById("prev-testimonial");
+      const nextBtn = document.getElementById("next-testimonial");
+      let currentSlide = 0;
+
+      const showSlide = (index) => {
+        testimonialSlides.forEach((slide, i) => {
+          slide.classList.toggle("hidden", i !== index);
+        });
+      };
+
+      const nextSlide = () => {
+        currentSlide = (currentSlide + 1) % testimonialSlides.length;
+        showSlide(currentSlide);
+      };
+
+      const prevSlide = () => {
+        currentSlide =
+          (currentSlide - 1 + testimonialSlides.length) %
+          testimonialSlides.length;
+        showSlide(currentSlide);
+      };
+
+      nextBtn.addEventListener("click", nextSlide);
+      prevBtn.addEventListener("click", prevSlide);
+
+      // Auto-slide testimonials
+      setInterval(nextSlide, 5000);
+
+      // Gallery Lightbox
+      const galleryItems = document.querySelectorAll(".gallery-item");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxClose = document.querySelector(".lightbox-close");
+
+      galleryItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          const img = item.querySelector("img");
+          lightboxImg.src = img.src;
+          lightbox.classList.add("active");
+        });
+      });
+
+      lightboxClose.addEventListener("click", () => {
+        lightbox.classList.remove("active");
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove("active");
+        }
+      });
+
+      // Contact Form
+      const contactForm = document.getElementById("contact-form");
+
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Create success message
+        const successMessage = document.createElement("div");
+        successMessage.className =
+          "bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg mb-4";
+        successMessage.innerHTML =
+          '<i class="fas fa-check-circle mr-2"></i> Thank you for your message! We will get back to you soon.';
+
+        // Insert before form
+        contactForm.parentNode.insertBefore(successMessage, contactForm);
+
+        // Reset form
+        contactForm.reset();
+
+        // Remove message after 5 seconds
+        setTimeout(() => {
+          successMessage.remove();
+        }, 5000);
+      });
+
+      // Add scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fadeInUp");
+            scrollObserver.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements for scroll animations
+      document.querySelectorAll("section").forEach((section) => {
+        scrollObserver.observe(section);
+      });
+
+      // Navbar scroll effect
+      const navbar = document.querySelector("nav");
+      let lastScrollTop = 0;
+
+      window.addEventListener("scroll", () => {
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > 100) {
+          navbar.classList.add("shadow-lg");
+        } else {
+          navbar.classList.remove("shadow-lg");
+        }
+
+        lastScrollTop = scrollTop;
+      });
+    </script>
+  </body>
+</html>
